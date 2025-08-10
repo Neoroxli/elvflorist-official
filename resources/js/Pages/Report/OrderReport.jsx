@@ -230,7 +230,7 @@ export default function OrderReport() {
                                     <ColumnGroup title="Informasi Pesanan">
                                         <Column title="Tanggal Pesan" dataIndex="orderDate" key="orderDate" />
                                         <Column title="Tanggal Bayar" dataIndex="buyDate" key="buyDate" />
-                                        <Column title="Nama Pelanggan" dataIndex="customerName" key="customerName" />
+                                        <Column title="Nama Pembeli" dataIndex="customerName" key="customerName" />
                                         <Column title="Nama Barang" dataIndex="productName" key="productName" />
                                         <Column title={
                                             <div className="flex flex-col items-center">
@@ -241,7 +241,7 @@ export default function OrderReport() {
                                         <Column title="Status Pembayaran" dataIndex="payStatus" key="payStatus" />
                                     </ColumnGroup>
                                     <Column title="Status Pesanan" dataIndex="orderStatus" key="orderStatus" />
-                                    <Column title="Pembuat Bucket" dataIndex="employee" key="employee" />
+                                    <Column title="Pembuat Buket" dataIndex="employee" key="employee" />
                                 </Table>
                                 {/* <Flex justify='end' className="mt-5">
                                     <Pagination

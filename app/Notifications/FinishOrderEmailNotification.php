@@ -10,13 +10,16 @@ use Illuminate\Notifications\Notification;
 class FinishOrderEmailNotification extends Notification
 {
     use Queueable;
+    protected $customer;
+    protected $url;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($customer, $url)
     {
-        //
+        $this->customer = $customer;
+        $this->url = $url;
     }
 
     /**
@@ -35,10 +38,16 @@ class FinishOrderEmailNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->subject('Sukses Pembuatan Bucket')
-                    ->line('The introduction to the notification.')
-                    ->action('Kunjungi Website', url(env('VITE_REDIRECT_URL_PROGRESS_ORDER_CUSTOMER')))
-                    ->line('Thank you for using our application!');
+                    ->subject('Sukses Pembuatan ' . $this->customer->bucket->name)
+                    // ->line('The introduction to the notification.')
+                    // ->action('Kunjungi Website', url(env('VITE_REDIRECT_URL_PROGRESS_ORDER_CUSTOMER')))
+                    // ->line('Thank you for using our application!');
+                    // ->view('emails.finish-order', ['customer' => $this->customer, 'url' => $this->url]);
+                    ->markdown('emails.finish-order', [
+                        'customer' => $this->customer,
+                        'url' => $this->url,
+                        'logo_path' => public_path('img/logo_elv_florist.png')
+                    ]);
     }
 
     /**

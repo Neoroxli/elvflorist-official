@@ -87,12 +87,12 @@
                 <th rowspan="2">No. Faktur</th>
                 <th colspan="5">Informasi Pesanan</th>
                 <th rowspan="2">Status Pesanan</th>
-                <th rowspan="2">Pembuat Bucket</th>
+                <th rowspan="2">Pembuat Buket</th>
             </tr>
             <tr>
                 <th>Tanggal Pesan</th>
                 <th>Tanggal Bayar</th>
-                <th>Nama Pelanggan</th>
+                <th>Nama Pembeli</th>
                 <th>Nama Barang</th>
                 <th>Total Harga Pesanan *)</th>
                 {{-- <th>Status Pembayaran</th> --}}

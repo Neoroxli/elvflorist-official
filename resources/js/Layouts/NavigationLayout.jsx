@@ -65,7 +65,7 @@ const NavigationLayout = () => {
                                 <li className="menu-item">
                                     <Link href={route('master-data.data-bucket')} className={route().current('master-data.data-bucket*') ? "menu-link active" : "menu-link"}>
                                         <span className="menu-icon"><i className="mgc_flower_2_line"></i></span>
-                                        <span className="menu-text"> Data Bucket </span>
+                                        <span className="menu-text"> Data Buket </span>
                                     </Link>
                                 </li>
                                 <li className="menu-item">

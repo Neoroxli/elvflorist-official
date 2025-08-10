@@ -296,7 +296,9 @@ class CheckOrderController extends Controller
                     ]);
                 }
 
-                $tes = FacadesNotification::route('mail', $employee->customer->user->email)->notify(new FinishOrderEmailNotification($request->order_id));
+                // push notifikasi ke email pembeli
+                $url = env('VITE_REDIRECT_URL_PROGRESS_ORDER_CUSTOMER') . '?no-order=' . $request->order_id;
+                $tes = FacadesNotification::route('mail', $employee->customer->user->email)->notify(new FinishOrderEmailNotification($employee, $url));
 
                 // $request->order_id->notify((new FinishOrderEmailNotification()));
 
