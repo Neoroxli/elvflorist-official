@@ -155,19 +155,19 @@ const NavigationLayout = () => {
                     </div>
                 </div> */}
                 {/* <div className="relative"> */}
-                    <div className="absolute w-full menu" style={{bottom: 30}} data-fc-type="accordion">
-                        <div className="menu-item">
-                            <Link
-                                className="w-full menu-link"
-                                href={route("logout")}
-                                method="post"
-                                as="button"
-                            >
-                                <span className="menu-icon"><i className="mgc_exit_line me-2"></i></span>
-                                <span>Log Out</span>
-                            </Link>
-                        </div>
+                <div className="absolute w-full menu" style={{ bottom: 30 }} data-fc-type="accordion">
+                    <div className="menu-item">
+                        <Link
+                            className="w-full menu-link"
+                            href={route("logout")}
+                            method="post"
+                            as="button"
+                        >
+                            <span className="menu-icon"><i className="mgc_exit_line me-2"></i></span>
+                            <span>Log Out</span>
+                        </Link>
                     </div>
+                </div>
                 {/* </div> */}
             </div>
         </div>

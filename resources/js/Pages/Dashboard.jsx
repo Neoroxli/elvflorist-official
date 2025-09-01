@@ -68,6 +68,9 @@ export default function Dashboard({ totalOrder, successOrder, processOrder, capt
         },
         datalabels: {
             enabled: false,
+        },
+        fill: {
+            colors: ['#fc95c4']
         }
     }
     // -- end grafik finance --
@@ -84,6 +87,9 @@ export default function Dashboard({ totalOrder, successOrder, processOrder, capt
         xaxis: {
             categories: showTotalOrder?.orderData.map(item => `${monthNames[item.month - 1]}`)
         },
+        fill: {
+            colors: ['#fc95c4']
+        }
     }
     // -- end grafik order --
 
@@ -109,6 +115,9 @@ export default function Dashboard({ totalOrder, successOrder, processOrder, capt
         xaxis: {
             categories: showEmployee?.employee.map(item => item.user)
         },
+        fill: {
+            colors: ['#fc95c4', '#ff0020', '#800080']
+        }
     }
     // -- end grafik employee --
 

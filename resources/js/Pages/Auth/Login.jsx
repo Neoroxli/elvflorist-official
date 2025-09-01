@@ -36,9 +36,9 @@ export default function Login({ status, canResetPassword }) {
         <GuestLayout>
             <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            {status && <div className="mb-4 text-sm font-medium text-green-600">{status}</div>}
 
-            {message && <div className="mb-4 font-medium text-sm text-red-600 text-center">{message}</div>}
+            {message && <div className="mb-4 text-sm font-medium text-center text-red-600">{message}</div>}
 
             <form onSubmit={submit}>
                 <div>
@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword }) {
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className="block w-full mt-1"
                         autoComplete="username"
                         isFocused={true}
                         onChange={(e) => setData('email', e.target.value)}
@@ -66,7 +66,7 @@ export default function Login({ status, canResetPassword }) {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="block w-full mt-1"
                         autoComplete="current-password"
                         onChange={(e) => setData('password', e.target.value)}
                     />
@@ -81,7 +81,7 @@ export default function Login({ status, canResetPassword }) {
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
                         />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                        <span className="text-sm text-gray-600 ms-2">Remember me</span>
                     </label>
                 </div>
 
@@ -89,14 +89,14 @@ export default function Login({ status, canResetPassword }) {
                     {/* {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Forgot your password?
                         </Link>
                     )} */}
 
-                    <PrimaryButton className="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 rounded-md ms-4"
-                        disabled={processing}>
+                    <PrimaryButton className="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ms-4"
+                        disabled={processing} style={{ background: "#fc95c4" }}>
                         Log in
                     </PrimaryButton>
                 </div>
