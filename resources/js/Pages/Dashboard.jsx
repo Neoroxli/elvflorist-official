@@ -78,18 +78,23 @@ export default function Dashboard({ totalOrder, successOrder, processOrder, capt
     // grafik order
     const seriesOrder = [{
         name: 'Buket',
-        data: showTotalOrder?.orderData.map(item => item.total_order)
+        data: showTotalOrder?.orderData.map(item => item.total_order),
     }];
     const optionsOrder = {
         chart: {
-            id: "basic-bar"
+            id: "basic-bar",
         },
         xaxis: {
             categories: showTotalOrder?.orderData.map(item => `${monthNames[item.month - 1]}`)
         },
+        plotOptions: {
+            bar: {
+                distributed: true
+            }
+        },
         fill: {
-            colors: ['#fc95c4']
-        }
+            colors: ['#fc95c4', '#ff0020', '#800080', '#ffbc00', '#0acf97', '#3073F1', '#fa5c7c', '#f1b44c', '#e2e2e2', '#e2e2e2', '#e2e2e2', '#e2e2e2']
+        },
     }
     // -- end grafik order --
 
